@@ -31,7 +31,7 @@ function Home() {
         i,
         j
     ];
-
+    console.log(a[0]);
     const [count, setCount] = useState(gameBoard);
     console.log(count[0][5]);
 
@@ -41,13 +41,13 @@ function Home() {
         rojo: "acierto",
         celeste: "falla"
     });
-    console.log(a[0]);
+
     return (
 
         <>
             <div className="container ">
                 <div className="row tabla" >
-                    <div className="col-1 cuadrados "  >
+                    {/* <div className="col-1 cuadrados "  >
                         {!!count && count.map((cuadros, index) => {
                             return <div className="objetivos" key={index}>
                                 {cuadros[0]}
@@ -116,7 +116,7 @@ function Home() {
                                 {cuadros[9]}
                             </div>
                         })}
-                    </div>
+                    </div> */}
                 </div>
                 <button onClick={pruebauno}>prueba</button>
                 <div className="container" >
@@ -144,18 +144,18 @@ function Home() {
                         <div className="col-1">6</div>
                         <div className="col-1">6</div>
                         <div className="col-1">66</div>
-                        <div className="col-1"></div>
+                        <div className="col-1">5</div>
                     </div>
                     <div className="row" >
-                        <div className="col-1"></div>
-                        <div className="col-1"></div>
-                        <div className="col-1"></div>
-                        <div className="col-1"></div>
-                        <div className="col-1"></div>
-                        <div className="col-1"></div>
-                        <div className="col-1"></div>
-                        <div className="col-1"></div>
-                        <div className="col-1"></div>
+                        <div className="col-1">3</div>
+                        <div className="col-1">2</div>
+                        <div className="col-1">4</div>
+                        <div className="col-1">454</div>
+                        <div className="col-1">5</div>
+                        <div className="col-1">7</div>
+                        <div className="col-1">678</div>
+                        <div className="col-1">65</div>
+                        <div className="col-1">4</div>
                         <div className="col-1"></div>
                         <div className="col-1"></div>
                     </div>
@@ -237,7 +237,6 @@ function Home() {
                         <div className="col-1"></div>
                         <div className="col-1"></div>
                     </div>
-
                 </div>
 
             </div >

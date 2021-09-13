@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './componente/Home';
 import Mapa from './componente/Mapa';
 
@@ -46,22 +46,22 @@ function App() {
     setturnos(false);
   }
 
-
+  useEffect(() => {
+    Cambiodeturnokaty()
+  }, [turno]);
   return (
     <>
 
       <div className="container" >
         <div className="row">
-          <div>turno de {turno ? 'katy True' : 'maquina Falso'}</div>
-          <div className="col-6">
-            <Mapa gameBoard={gameBoard} cambia={Cambiodeturnokaty} turno={turno} />
+          <div lassName="col-1">Turno de {turno ? 'Usuario' : 'Le toca maquina'}</div>
+          <div className="col-6" onClick={Cambiodeturnomaquina}>
+            <Mapa gameBoard={gameBoard} turno={turno} />
 
           </div>
-          <div className="col-6">
-            <Home maquina={Maquina} cambia={Cambiodeturnomaquina} turno={turno} />
+          <div className="col-6" onClick={Cambiodeturnokaty}>
+            <Home maquina={Maquina} turno={turno} cambiar={Cambiodeturnokaty} />
           </div>
-          <button onClick={Cambiodeturnokaty}>Cambio de turno katy</button>
-          <button onClick={Cambiodeturnomaquina}>Cambio de turno maquina</button>
         </div>
       </div>
 

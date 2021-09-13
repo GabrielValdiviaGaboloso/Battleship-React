@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './mapa.css';
 
 const Mapa = (props) => {
 
-    console.log(props.turno);
+
 
     const [stateGameBoard, setGameBoard] = useState(props.gameBoard);
 
+
+
+
+
     const fireTorpedo = (index, subIndex) => {
         let state = stateGameBoard[index][subIndex];
+
         if (state === 1) {
             stateGameBoard[index][subIndex] = 2;
         }
@@ -22,6 +27,7 @@ const Mapa = (props) => {
             return stateGameBoard
         });
 
+
     }
 
 
@@ -29,15 +35,23 @@ const Mapa = (props) => {
     return (
         <>
             <div className="mapa">
-                <div className="row">
+                {props.turno ? <div className="row">
                     {stateGameBoard.map((celda, index) => {
                         return celda.map((subCelda, subIndex) => {
-                            return <div className={` botton + btn-${subCelda}`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)} onClick={props.cambia}>
+                            return <div className={` botton + btn-${subCelda}`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)}>
                             </div>
                         })
                     })}
-                </div>
-                <button onClick={props.cambia}>cambiat dentro de maquina</button>
+                </div> : <div className="row">
+                    {stateGameBoard.map((celda, index) => {
+                        return celda.map((subCelda, subIndex) => {
+                            return <div className={` botton + btn-${subCelda}`} key={subIndex} >
+                            </div>
+                        })
+                    })}
+                </div>}
+
+
             </div>
         </>
     );

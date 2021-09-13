@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './home.css'
 
 const Home = (props) => {
 
-    console.log(props);
+
 
     const [stateGameBoard, setGameBoard] = useState(props.maquina);
 
@@ -21,18 +21,38 @@ const Home = (props) => {
 
     }
 
+
+
+    useEffect(() => {
+        let index = Math.floor(Math.random() * 10)
+        let subIndex = Math.floor(Math.random() * 10)
+
+        fireTorpedo(index, subIndex)
+
+
+    }, [props.turno]); // Solo se vuelve a ejecutar si turno cambia
+
     return (
         <>
             <div className="mapa">
-                <div className="row">
+                {props.turno ? <div className="row">
                     {stateGameBoard.map((celda, index) => {
                         return celda.map((subCelda, subIndex) => {
-                            return <div className={` botton + btn-${subCelda}`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)} onClick={props.cambia} >
+                            return <div className={` botton + btn-${subCelda}`} key={subIndex}   >
+
                             </div>
                         })
                     })}
-                </div>
-                <button onClick={props.cambia}>cambiat dentro de maquina</button>
+                </div> : <div className="row">
+                    {stateGameBoard.map((celda, index) => {
+                        return celda.map((subCelda, subIndex) => {
+                            return <div className={` botton + btn-${subCelda}`} key={subIndex}   >
+                            </div>
+                        })
+                    })}
+                </div>}
+
+
 
             </div>
         </>

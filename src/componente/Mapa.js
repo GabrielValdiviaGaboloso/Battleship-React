@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './mapa.css';
-const Mapa = ({ gameBoard, turno }) => {
 
-    console.log(turno);
+const Mapa = (props) => {
 
-    const [stateGameBoard, setGameBoard] = useState(gameBoard);
+    console.log(props.turno);
+
+    const [stateGameBoard, setGameBoard] = useState(props.gameBoard);
 
     const fireTorpedo = (index, subIndex) => {
         let state = stateGameBoard[index][subIndex];
@@ -19,7 +20,6 @@ const Mapa = ({ gameBoard, turno }) => {
         }
         setGameBoard(() => {
             return stateGameBoard
-
         });
 
     }
@@ -32,12 +32,12 @@ const Mapa = ({ gameBoard, turno }) => {
                 <div className="row">
                     {stateGameBoard.map((celda, index) => {
                         return celda.map((subCelda, subIndex) => {
-                            return <div className={` botton + btn-${subCelda}`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)}>
+                            return <div className={` botton + btn-${subCelda}`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)} onClick={props.cambia}>
                             </div>
                         })
                     })}
                 </div>
-
+                <button onClick={props.cambia}>cambiat dentro de maquina</button>
             </div>
         </>
     );

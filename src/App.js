@@ -23,38 +23,45 @@ function App() {
   ];
 
   let Maquina = [
-    [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 1, 1, 1, 0, 0, 0, 0, 0],
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
   ];
 
 
   const [turno, setturnos] = useState(true);
 
 
+  const Cambiodeturnokaty = () => {
+    setturnos(true);
+  }
+  const Cambiodeturnomaquina = () => {
+    setturnos(false);
+  }
 
 
   return (
     <>
 
-      <div className="container">
+      <div className="container" >
         <div className="row">
-          <div>turno de {turno ? 'katy' : 'maquina'}</div>
+          <div>turno de {turno ? 'katy True' : 'maquina Falso'}</div>
           <div className="col-6">
-            <Mapa gameBoard={gameBoard} turno={turno} />
+            <Mapa gameBoard={gameBoard} cambia={Cambiodeturnokaty} turno={turno} />
 
           </div>
           <div className="col-6">
-            <Home maquina={Maquina} turno={turno} />
+            <Home maquina={Maquina} cambia={Cambiodeturnomaquina} turno={turno} />
           </div>
-
+          <button onClick={Cambiodeturnokaty}>Cambio de turno katy</button>
+          <button onClick={Cambiodeturnomaquina}>Cambio de turno maquina</button>
         </div>
       </div>
 

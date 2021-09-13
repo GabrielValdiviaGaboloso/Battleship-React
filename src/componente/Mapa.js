@@ -1,26 +1,16 @@
 import React, { useState } from 'react';
 import './mapa.css';
-const Mapa = ({ gameBoard }) => {
+const Mapa = ({ gameBoard, turno }) => {
 
-    const [turno, jugadores] = useState(
-        { name: "kathy" }
-    );
+    console.log(turno);
 
     const [stateGameBoard, setGameBoard] = useState(gameBoard);
 
-
-    const inicio = () => {
-        return jugadores(() => {
-            return {
-                name: "kathy"
-            };
-        });
-    }
-
-
-
     const fireTorpedo = (index, subIndex) => {
         let state = stateGameBoard[index][subIndex];
+        if (state === 1) {
+            stateGameBoard[index][subIndex] = 2;
+        }
         if (state === 1) {
             stateGameBoard[index][subIndex] = 2;
         }
@@ -31,8 +21,10 @@ const Mapa = ({ gameBoard }) => {
             return stateGameBoard
 
         });
-        inicio()
+
     }
+
+
 
     return (
         <>

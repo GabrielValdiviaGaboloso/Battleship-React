@@ -7,6 +7,8 @@ const Home = (props) => {
 
     const [stateGameBoard, setGameBoard] = useState(props.maquina);
 
+
+
     const fireTorpedo = (index, subIndex) => {
         let state = stateGameBoard[index][subIndex];
         if (state === 1) {
@@ -24,11 +26,14 @@ const Home = (props) => {
 
 
     useEffect(() => {
+        let cambio = props.turno
         let index = Math.floor(Math.random() * 10)
         let subIndex = Math.floor(Math.random() * 10)
-
-        fireTorpedo(index, subIndex)
-
+        if (cambio === false) {
+            fireTorpedo(index, subIndex)
+        } if (cambio === true) {
+            return
+        }
 
     }, [props.turno]); // Solo se vuelve a ejecutar si turno cambia
 

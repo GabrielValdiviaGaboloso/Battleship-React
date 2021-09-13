@@ -35,9 +35,7 @@ function App() {
     [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
   ];
 
-
   const [turno, setturnos] = useState(true);
-
 
   const Cambiodeturnokaty = () => {
     setturnos(true);
@@ -45,13 +43,12 @@ function App() {
   const Cambiodeturnomaquina = () => {
     setturnos(false);
   }
-
   useEffect(() => {
     Cambiodeturnokaty()
   }, [turno]);
+
   return (
     <>
-
       <div className="container" >
         <div className="row">
           <div lassName="col-1">Turno de {turno ? 'Usuario' : 'Le toca maquina'}</div>

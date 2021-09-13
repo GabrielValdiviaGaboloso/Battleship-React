@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import './mapa.css';
+const Mapa = ({ gameBoard }) => {
 
-function Mapa() {
-    let gameBoard = [
-        [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
-    ];
+    const [turno, jugadores] = useState(
+        { name: "kathy" }
+    );
 
     const [stateGameBoard, setGameBoard] = useState(gameBoard);
+
+
+    const inicio = () => {
+        return jugadores(() => {
+            return {
+                name: "kathy"
+            };
+        });
+    }
+
+
 
     const fireTorpedo = (index, subIndex) => {
         let state = stateGameBoard[index][subIndex];
@@ -25,35 +27,28 @@ function Mapa() {
         if (state === 0) {
             stateGameBoard[index][subIndex] = 3;
         }
-        cambiarcolora(() => {
-            return stateGameBoard;
-        });
-        cambiarcolora()
+        setGameBoard(() => {
+            return stateGameBoard
 
+        });
+        inicio()
     }
-    const cambiarcolora = () => {
-        setGameBoard((prevState) => {
-            return {
-                ...prevState,
-                stateGameBoard
-            };
-        });
-        console.log(stateGameBoard);
-    };
-
-
-
-
 
     return (
-        <div className="mapa p-5">
-            {stateGameBoard.map((value, index) => {
-                return value.map((subValue, i) => {
-                    return <div key={i} className={`botton + btn-${subValue}`} onClick={() => fireTorpedo(index, i)}>{value[i]}</div>
-                })
-            })}
-        </div>
+        <>
+            <div className="mapa">
+                <div className="row">
+                    {stateGameBoard.map((celda, index) => {
+                        return celda.map((subCelda, subIndex) => {
+                            return <div className={` botton + btn-${subCelda}`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)}>
+                            </div>
+                        })
+                    })}
+                </div>
+
+            </div>
+        </>
     );
-}
+};
 
 export default Mapa;

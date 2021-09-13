@@ -4,6 +4,10 @@ import Home from './componente/Home';
 import Mapa from './componente/Mapa';
 
 function App() {
+  // 0 = vacío 
+  // 1 = parte de un barco 
+  // 2 = una parte hundida de un barco 
+  // 3 = un disparo fallido 
   let gameBoard = [
     [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -21,7 +25,8 @@ function App() {
     <>
 
       {/* <div className="col-6"> <Home /></div> */}
-      <Mapa tablero={gameBoard} />
+      <div className="container"><Mapa gameBoard={gameBoard} /></div>
+
 
 
 

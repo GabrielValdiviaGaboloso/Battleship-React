@@ -3,13 +3,7 @@ import './mapa.css';
 
 const Mapa = (props) => {
 
-
-
     const [stateGameBoard, setGameBoard] = useState(props.gameBoard);
-
-
-
-
 
     const fireTorpedo = (index, subIndex) => {
         let state = stateGameBoard[index][subIndex];
@@ -26,11 +20,7 @@ const Mapa = (props) => {
         setGameBoard(() => {
             return stateGameBoard
         });
-
-
     }
-
-
 
     return (
         <>
@@ -50,8 +40,6 @@ const Mapa = (props) => {
                         })
                     })}
                 </div>}
-
-
             </div>
         </>
     );

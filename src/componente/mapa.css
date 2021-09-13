@@ -1,5 +1,6 @@
 .mapa {
-    text-align: center;
+    display:flex;
+    flex-wrap: wrap
   }
   .botton{
     width: 24px;

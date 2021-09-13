@@ -25,23 +25,33 @@ function Mapa() {
         if (state === 0) {
             stateGameBoard[index][subIndex] = 3;
         }
-        setGameBoard(() => {
+        cambiarcolora(() => {
             return stateGameBoard;
         });
+        cambiarcolora()
 
-        console.log(stateGameBoard);
     }
+    const cambiarcolora = () => {
+        setGameBoard((prevState) => {
+            return {
+                ...prevState,
+                stateGameBoard
+            };
+        });
+        console.log(stateGameBoard);
+    };
+
+
+
+
 
     return (
         <div className="mapa p-5">
-            <div className="container">
-                {stateGameBoard.map((value, index) => {
-                    return value.map((subValue, i) => {
-                        return <button key={i} className={`botton + btn-${subValue}`} onClick={() => fireTorpedo(index, i)}></button>
-                    })
-                })}
-            </div>
-
+            {stateGameBoard.map((value, index) => {
+                return value.map((subValue, i) => {
+                    return <div key={i} className={`botton + btn-${subValue}`} onClick={() => fireTorpedo(index, i)}>{value[i]}</div>
+                })
+            })}
         </div>
     );
 }

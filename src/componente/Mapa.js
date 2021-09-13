@@ -3,14 +3,11 @@ import './mapa.css';
 
 const Mapa = (props) => {
 
-    const [stateGameBoard, setGameBoard] = useState(props.gameBoard);
+    const [stateGameBoard, setGameBoard] = useState(props.gameBoard); //funcion de estado para el tablero
 
-    const fireTorpedo = (index, subIndex) => {
+    const fireTorpedo = (index, subIndex) => {               //funcion para cambiar los cuadrados en la tabla
         let state = stateGameBoard[index][subIndex];
 
-        if (state === 1) {
-            stateGameBoard[index][subIndex] = 2;
-        }
         if (state === 1) {
             stateGameBoard[index][subIndex] = 2;
         }

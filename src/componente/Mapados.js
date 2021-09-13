@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './home.css'
 
-const Home = (props) => {
+const Mapados = (props) => {
 
-    const [stateGameBoard, setGameBoard] = useState(props.maquina);
+    const [stateGameBoard, setGameBoard] = useState(props.maquina);  //funcion de estado para el tablero
 
-    const fireTorpedo = (index, subIndex) => {
+    const fireTorpedo = (index, subIndex) => {     //funcion para cambiar los cuadrados en la tabla
         let state = stateGameBoard[index][subIndex];
         if (state === 1) {
             stateGameBoard[index][subIndex] = 2;
@@ -16,10 +16,9 @@ const Home = (props) => {
         setGameBoard(() => {
             return stateGameBoard
         });
-
     }
 
-    useEffect(() => {
+    useEffect(() => {                  //funcion para crear los numeros aleatorios en el que la maquina usara
         let cambio = props.turno
         let index = Math.floor(Math.random() * 10)
         let subIndex = Math.floor(Math.random() * 10)
@@ -57,4 +56,4 @@ const Home = (props) => {
     );
 };
 
-export default Home;
+export default Mapados;

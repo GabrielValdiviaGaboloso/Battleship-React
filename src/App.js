@@ -37,6 +37,8 @@ function App() {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
   ];
+  let accion = ["mar.jpg", "falla.jpg", "agujero.jpg"]
+
 
   const [turno, setturnos] = useState(true);    // Estado de de turno para el juego
 
@@ -52,23 +54,32 @@ function App() {
 
   return (
     <>
-      <div className="container" >
+      <div className="  col-md-12 d-flex align-items-center justify-content-center text-white" style={{
+        background: 'url(/Barcos.jpg)',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        padding: '310px',
+        backgroundSize: 'cover',
+        height: '500px',
 
-        <div className="row">
-          <h1 className="p-4">Turno de {turno ? 'Usuario' : 'Le toca maquina'}</h1>
-          <div className="col-6" onClick={Cambiodeturnomaquina}>
-            <h2>Tabla usuario</h2>
-            <Mapa gameBoard={gameBoard} turno={turno} />
+      }} >
+        <div className="container"><div className="row">
+          <h1 className="p-4" >Turno de {turno ? 'Usuario' : 'Le toca maquina'}</h1>
+          <div className=" col-6" onClick={Cambiodeturnomaquina}>
+            <h2 className="text">Tabla usuario</h2>
+            <Mapa gameBoard={gameBoard} turno={turno} accion={accion} />
 
           </div>
           <div className="col-6" onClick={Cambiodeturnokaty}>
-            <h2>Tabla maquina</h2>
-            <Mapados maquina={Maquina} turno={turno} cambiar={Cambiodeturnokaty} />
+            <h2 className="text" >Tabla maquina</h2>
+            <Mapados maquina={Maquina} turno={turno} cambiar={Cambiodeturnokaty} accion={accion} />
           </div>
-        </div>
+        </div></div>
+
+
+
       </div>
     </>
   );
 }
-
 export default App;

@@ -14,6 +14,7 @@ const Mapados = (props) => {
             stateGameBoard[index][subIndex] = 3;
         }
         setGameBoard(() => {
+
             return stateGameBoard
         });
     }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './mapa.css';
 
+
 const Mapa = (props) => {
 
     const [stateGameBoard, setGameBoard] = useState(props.gameBoard); //funcion de estado para el tablero
@@ -21,8 +22,8 @@ const Mapa = (props) => {
 
     return (
         <>
-            <div className="mapa">
-                {props.turno ? <div className="row">
+            <div className="mapa" >
+                {props.turno ? <div className="row" >
                     {stateGameBoard.map((celda, index) => {
                         return celda.map((subCelda, subIndex) => {
                             return <div className={` botton + btn-${subCelda}`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)}>
@@ -37,9 +38,12 @@ const Mapa = (props) => {
                         })
                     })}
                 </div>}
+
             </div>
         </>
     );
 };
 
 export default Mapa;
+
+// <img src={`/${props.accion[]}`} key={subIndex} ></img>

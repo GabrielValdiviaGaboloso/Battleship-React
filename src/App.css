@@ -2,8 +2,18 @@
     display:flex;
     flex-wrap: wrap;
     width: 530px;
-   padding-top: 110px;
   }
-.h1{
-    text-decoration: tomato;
+ h2{
+    color: black;
+    background-color: rgba(255, 255, 255, 0.411);
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+ }
+h1{
+      color: black;
+      background-color: rgba(255, 255, 255, 0.411);
+      border: 1px solid black;
+      border-radius: 5px;
+      text-align: center;
 }

@@ -5,6 +5,15 @@
     border: 1px solid black;
   }
   
+  img{
+    width: 24px; 
+    height: 27px;
+    padding-left: -30px;
+    margin-left: -12px;
+    
+
+  }
+
   .btn-0{
     background-color: blue;
     

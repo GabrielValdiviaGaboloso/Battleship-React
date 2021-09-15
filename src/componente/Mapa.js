@@ -26,14 +26,14 @@ const Mapa = (props) => {
                 {props.turno ? <div className="row" >
                     {stateGameBoard.map((celda, index) => {
                         return celda.map((subCelda, subIndex) => {
-                            return <div className={` botton + btn-${subCelda}`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)}>
+                            return <div className={` botton`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)}><img src={`/${props.accion[subCelda]}`} key={subIndex} ></img>
                             </div>
                         })
                     })}
                 </div> : <div className="row">
                     {stateGameBoard.map((celda, index) => {
                         return celda.map((subCelda, subIndex) => {
-                            return <div className={` botton + btn-${subCelda}`} key={subIndex} >
+                            return <div className={` botton`} key={subIndex} >
                             </div>
                         })
                     })}
@@ -47,3 +47,21 @@ const Mapa = (props) => {
 export default Mapa;
 
 // <img src={`/${props.accion[]}`} key={subIndex} ></img>
+
+
+
+// {props.turno ? <div className="row" >
+// {stateGameBoard.map((celda, index) => {
+//     return celda.map((subCelda, subIndex) => {
+//         return <div className={` botton + btn-${subCelda}`} key={subIndex} onClick={() => fireTorpedo(index, subIndex)}><img src={`/${props.accion[subCelda]}`} key={subIndex} ></img>
+//         </div>
+//     })
+// })}
+// </div> : <div className="row">
+// {stateGameBoard.map((celda, index) => {
+//     return celda.map((subCelda, subIndex) => {
+//         return <div className={` botton + btn-${subCelda}`} key={subIndex} >
+//         </div>
+//     })
+// })}
+// </div>}

@@ -37,7 +37,7 @@ function App() {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
   ];
-  let accion = ["mar.jpg", "falla.jpg", "agujero.jpg"]
+  let accion = ["mar.jpg", "mar.jpg", "agujero.jpg", "falla.jpg"]
 
 
   const [turno, setturnos] = useState(true);    // Estado de de turno para el juego

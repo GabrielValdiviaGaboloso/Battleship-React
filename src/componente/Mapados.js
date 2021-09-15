@@ -36,7 +36,7 @@ const Mapados = (props) => {
                 {props.turno ? <div className="row">
                     {stateGameBoard.map((celda, index) => {
                         return celda.map((subCelda, subIndex) => {
-                            return <div className={` botton + btn-${subCelda}`} key={subIndex}   >
+                            return <div className={` botton`} key={subIndex}   ><img src={`/${props.accion[subCelda]}`} key={subIndex} ></img>
 
                             </div>
                         })
@@ -44,7 +44,7 @@ const Mapados = (props) => {
                 </div> : <div className="row">
                     {stateGameBoard.map((celda, index) => {
                         return celda.map((subCelda, subIndex) => {
-                            return <div className={` botton + btn-${subCelda}`} key={subIndex}   >
+                            return <div className={` botton `} key={subIndex}   ><img src={`/${props.accion[subCelda]}`} key={subIndex} ></img>
                             </div>
                         })
                     })}

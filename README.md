@@ -71,8 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 <h1>battleship<h1>
 
-<p>The page will reload if you make edits.\
-You will also see any lint errors in the console.<p>
+<h4>The page will reload if you make edits.\
+You will also see any lint errors in the console.<h4>
 
 ### `npm test`
     

@@ -77,7 +77,8 @@ You will also see any lint errors in the console.<h4>
 ### `npm test`
     
  <h2>Avance del trabajo<h2>
-    https://user-images.githubusercontent.com/55467608/134574270-6d4119bb-54ca-4faf-940d-136399d08380.mp4
+  ![2021-09-23-16-57-08](https://user-images.githubusercontent.com/55467608/134575418-2d1efc68-0b0f-43d9-b32f-803f502fac41.gif)
+
    
  <h4>Hecho por Gabriel Valdivia<h4>
     

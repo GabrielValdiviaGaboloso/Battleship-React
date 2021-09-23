@@ -70,8 +70,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
 
 <h1>battleship<h1>
-<h2> Para inicial colocque en el terminar npm start <h2>
-  
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
